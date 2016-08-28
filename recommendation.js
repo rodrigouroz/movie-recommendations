@@ -96,7 +96,7 @@ function getRecommendation(movie, threshold) {
   return recommendation;
 }
 
-function showMovies() {
+function getMovies() {
 
   var movies = [];
 
@@ -119,6 +119,6 @@ var data = require('./data/db.json');
 var db = prepareDatabase(data);
 
 module.exports = {
-  recommend: getRecommendation,
-  getMovies: showMovies
+  getRecommendation: getRecommendation,
+  getMovies: getMovies
 };

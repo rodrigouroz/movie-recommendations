@@ -6,7 +6,7 @@ const assert = require('assert');
 describe('Recommend Movies', function () {
 
   const recommendation = require('../recommendation');
-  var result = recommendation.recommend('Duro de matar', 0.5);
+  var result = recommendation.getRecommendation('Duro de matar', 0.5);
 
   console.log(result);
 
