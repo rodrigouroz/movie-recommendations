@@ -69,7 +69,7 @@ function createKeyForMovie(movie) {
 
 // this looks for recommendations that are over the desired threshold
 // TODO make threshold optional
-function showRecommendation(movie, threshold) {
+function getRecommendation(movie, threshold) {
 
   var movieKey = createKeyForMovie(movie);
 
@@ -119,6 +119,6 @@ var data = require('./data/db.json');
 var db = prepareDatabase(data);
 
 module.exports = {
-  recommend: showRecommendation,
+  recommend: getRecommendation,
   getMovies: showMovies
 };
