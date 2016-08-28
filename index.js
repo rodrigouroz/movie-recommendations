@@ -1,9 +1,11 @@
 /**
  * Created by rodrigouroz on 28/8/16.
  */
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 const recommendation = require('./recommendation');
+
+app.set('port', (process.env.PORT || 5000));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -38,6 +40,6 @@ app.get('/getRecommendation', function (req, res) {
 
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(app.get('port'), function () {
+  console.log('Movie Recommendations API running');
 });
