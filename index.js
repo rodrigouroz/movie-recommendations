@@ -15,16 +15,16 @@ app.use(function (req, res, next) {
 
 app.get('/', function (req, res) {
   res.json([
-    '/getMovies',
-    '/getRecommendation'
+    '/movies',
+    '/recommendation'
   ]);
 });
 
-app.get('/getMovies', function (req, res) {
+app.get('/movies', function (req, res) {
   res.json(recommendation.getMovies());
 });
 
-app.get('/getRecommendation', function (req, res) {
+app.get('/recommendation', function (req, res) {
 
   if (!req.query.hasOwnProperty('movie') || !req.query.hasOwnProperty('threshold')) {
     res.status(409).json({
